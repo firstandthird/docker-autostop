@@ -1,0 +1,37 @@
+{
+  "name": "docker-autostop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "automaticall stop docker services after a certain interval",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/docker-autostop.git"
+  },
+  "keywords": [
+    "docker",
+    "swarm",
+    "service"
+  ],
+  "author": "First and Third",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/firstandthird/docker-autostop/issues"
+  },
+  "homepage": "https://github.com/firstandthird/docker-autostop#readme",
+  "dependencies": {
+    "dockerode": "^2.5.3",
+    "p-every": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "eslint-config-firstandthird": "^4.1.1",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "eslintConfig": {
+    "extends": "firstandthird"
+  }
+}
