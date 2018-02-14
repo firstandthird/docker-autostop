@@ -20,6 +20,7 @@ const run = async function() {
     }
     return false;
   });
+  console.log(`Found ${toStop.length} services ready to stop`);
 
   await every(toStop, async (s) => {
     const service = await client.getService(s.ID);
@@ -27,6 +28,8 @@ const run = async function() {
     return await service.remove();
   });
 
-  setInterval(run, interval);
+  console.log(`Complete`);
+
+  setTimeout(run, interval);
 };
 run();
