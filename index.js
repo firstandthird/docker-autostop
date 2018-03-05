@@ -13,7 +13,11 @@ const run = async function() {
 
   const toStop = services.filter((s) => {
     const created = new Date(s.UpdatedAt);
-    const stopAfterMin = parseInt(s.Spec.Labels.autostop, 10) * 1000 * 60;
+    const stopDelay = parseInt(s.Spec.Labels.autostop, 10);
+    if (stopDelay === -1 || stopDelay === 0) {
+      return false
+    }
+    const stopAfterMin = stopDelay * 1000 * 60;
     const now = new Date().getTime();
     if (created.getTime() + stopAfterMin < now) {
       return true;
