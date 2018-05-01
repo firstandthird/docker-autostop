@@ -2,7 +2,7 @@ const Docker = require('dockerode');
 const client = new Docker();
 const every = require('p-every');
 
-const interval = process.env.INTERVAL ? parseInt(process.env.INTERVAL, 10) : 1000 * 60 * 30;
+const interval = process.env.INTERVAL ? parseInt(process.env.INTERVAL, 10) : 1000 * 60 * 10;
 
 const run = async function() {
   const services = await client.listServices({
